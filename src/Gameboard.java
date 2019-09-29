@@ -14,6 +14,7 @@ public class Gameboard {
     private int playabley;
     private int player;
     private int count;
+    private boolean passed;
     private boolean legal = false;
     private boolean endgame = false;
     private List<Index> candidates = new ArrayList<>();
@@ -71,7 +72,12 @@ public class Gameboard {
 
     }
 
+    public boolean isPassed() {
+        return passed;
+    }
+
     public void inspectLegal(Index index, int player, Direction d) {
+        passed = false;
         Index current = d.next(index);
         if (board[current.getColumn()][current.getRow()].isBorder()) {
 
@@ -89,6 +95,7 @@ public class Gameboard {
             } else {
                 System.out.println("C No legal move pass");
                 System.out.println(myColor);
+                passed = true;
             }
         }
 
