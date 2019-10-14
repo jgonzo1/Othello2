@@ -168,7 +168,7 @@ public class Gameboard {
 
     public void printBoard() {
         for (int i = 0; i < HEIGHT; i++ ) {
-            System.out.println();
+            System.out.println("C ");
             System.out.print("C ");
             for (int j = 0; j < WIDTH; j++ ) {
                 System.out.print(board[i][j] + " ");
@@ -246,8 +246,8 @@ public class Gameboard {
         }
 
         printBoard();
-        System.out.print("R " + myColor);
-        System.out.println();
+        System.out.println("R " + myColor);
+        System.out.println("C");
     }
 
 
