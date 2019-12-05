@@ -104,7 +104,7 @@ public class Gameboard {
 
     public void inspectPiece(Index index, int player, Direction d) {
 
-        Index current = d.next(index);
+        Index current = index;
         if (player == board[index.getColumn()][index.getRow()].getCellvalue()) {
             //all pieces should be flipped
         } else if (board[current.getColumn()][current.getRow()].getCellvalue() == 0) {
@@ -175,6 +175,7 @@ public class Gameboard {
             }
         }
         System.out.println();
+
     }
 
     public int getPlayablex() {
